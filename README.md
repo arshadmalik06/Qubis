@@ -5,7 +5,7 @@
 
 QuBIS is a smart platform designed to simplify BIS compliance for manufacturers, MSMEs, and industries. By combining Retrieval-Augmented Generation (RAG) with strict data pipelines, QuBIS instantly transforms complex government standards into actionable, trackable steps.
 
-## ✨ Core Features
+## 1.)Core Features
 
 *   **🤖 Streaming AI Assistant:** A conversational interface that answers queries based on real BIS documents. Includes a split-screen PDF viewer that highlights the exact clause the AI used to answer your question.
 *   **📋 Dynamic Compliance Checklists:** Input a product and its intended use to generate a strict, personalized compliance roadmap containing required documents, testing actions, and certification steps.
@@ -13,7 +13,7 @@ QuBIS is a smart platform designed to simplify BIS compliance for manufacturers,
 *   **💾 Router-Proof Memory:** Seamlessly saves all chat sessions and checklist states to local storage, surviving page refreshes and navigation.
 *   **📄 Export Summaries:** One-click client-side generation of downloadable compliance summary reports.
 
-## 🛠️ Tech Stack
+## 2.)Tech Stack
 
 **Frontend**
 *   React (TypeScript)
@@ -27,7 +27,7 @@ QuBIS is a smart platform designed to simplify BIS compliance for manufacturers,
 *   ChromaDB (Vector Database for RAG)
 *   Qwen LLM (Streaming Agent & Structured JSON Generation)
 
-## 🚀 Getting Started
+## 3.) Getting Started
 
 ### Prerequisites
 *   Node.js (v18+)
