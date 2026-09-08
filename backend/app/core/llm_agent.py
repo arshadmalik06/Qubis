@@ -76,3 +76,33 @@ class BISLLMAgent:
             # Catch-all for any other backend failures
             error_msg = f"SYSTEM ERROR: An unexpected failure occurred during generation - {str(e)}"
             yield {"data": json.dumps({"token": error_msg})}
+
+    async def generate_completion(self, prompt: str, system_prompt: str = None) -> str:
+        """
+        Non-streaming generation for structured outputs (e.g., JSON checklists).
+        Returns the complete response as a single string — avoids SSE parsing entirely.
+        """
+        payload = {
+            "model": self.model_name,
+            "prompt": prompt,
+            "system": system_prompt or self.system_prompt,
+            "stream": False,
+            "options": {
+                "temperature": 0.2,
+                "num_predict": 4096,
+            }
+        }
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    self.ollama_url, json=payload, timeout=180.0
+                )
+                response.raise_for_status()
+                data = response.json()
+                return data.get("response", "")
+        except httpx.ConnectError:
+            raise ConnectionError(
+                "CRITICAL: LLM Engine (Ollama) is offline or unreachable on port 11434."
+            )
+        except Exception as e:
+            raise RuntimeError(f"LLM completion failed: {str(e)}")
