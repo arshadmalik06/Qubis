@@ -3,7 +3,7 @@
 
 **AI-Based Bureau of Indian Standards (BIS) Compliance Assistant & Checklist Generator**
 
-Built for the **TEXUS '26 Hackathon** at SRM Ramapuram, QuBIS is a smart platform designed to simplify BIS compliance for manufacturers, MSMEs, and industries. By combining Retrieval-Augmented Generation (RAG) with strict data pipelines, QuBIS instantly transforms complex government standards into actionable, trackable steps.
+QuBIS is a smart platform designed to simplify BIS compliance for manufacturers, MSMEs, and industries. By combining Retrieval-Augmented Generation (RAG) with strict data pipelines, QuBIS instantly transforms complex government standards into actionable, trackable steps.
 
 ## ✨ Core Features
 
